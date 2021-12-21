@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+  <title>Minimarket</title>
+</head>
+
+<body>
+  <div id="app">
+   
+      <!--INICIO NAVBAR-->
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="padding-left: 10px">Minimarket
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="index.html">Inicio</a></li>
+
+              <li><a href="#">
+                  <div class="carrito">Carrito: 0</div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="container">
+
+
+        <div class="row">
+
+
+          <div class="col s12 l6">
+            <h4>Imagen del producto</h4>
+            <img
+              src="https://7483c243aa9da28f329c-903e05bc00667eb97d832a11f670edad.ssl.cf1.rackcdn.com/img-oh-NqyXG-large.jpg"
+              alt="">
+
+
+          </div>
+
+          <div class="col s12 l6">
+
+            <h4>Descripción del producto</h4>
+            <a href="#">MAR-VERDE</a>
+            <h5>Filete de Salmon Congelado</h5>
+            <h6>Filete de Salmon Congelado MAR-VERDE, 500g</h6>
+            <h5>Stock Disponible: 20</h5>
+
+
+
+
+            <h5>Precio: $8.930</h5>
+
+
+            <button v-on:click="increment" class="waves-effect waves-light waves-yellow green lighten-4 btn"
+           click="M.toast({html: 'Añadiste un elemento al carro',displayLength:1500})"><a href="carrito.html">Agregar al Carrito</a></button>
+            
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--mi app en vue-->
+  <script src="js/app.js"></script>
+</body>
+
+</html>

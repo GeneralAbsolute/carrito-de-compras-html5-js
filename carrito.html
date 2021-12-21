@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+</head>
+
+<body>
+
+  <div id="app">
+    <!--INICIO NAVBAR-->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo" style="padding-left: 10px">Minimarket
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">Inicio</a></li>
+
+            <li><a href="carrito.html">
+                <div class="carrito">Carrito: {{car}}</div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </nav>
+    </div>
+
+
+
+    <div v-if="products.length">
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Producto</th>
+            <th>Marca</th>
+            <th>precio</th>
+            <th>Cantidad</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tr v-for="(item,index) in products">
+          <td>{{item.id}}</td>
+          <td>{{item.product}}</td>
+          <td>{{item.marca}}</td>
+          <td>{{item.price | showPrice}}</td>
+          <td>
+            <!-- v-bind: disabled = "item.count <= 1" Cuando es verdadero, el control puede interactuar, cuando es falso, ya no puede interactuar -->
+            <button @click="decrement(index)" v-bind:disabled="item.cant<=1"
+              class="waves-effect waves-light waves-yellow blue btn">-</button>
+            {{item.cant}}
+            <button v-on:click="increment(index)" class="waves-effect waves-light waves-yellow green btn">+</button>
+          </td>
+          <td><button @click="del(index)" v-bind:disabled="item.cant > 1"
+              class="waves-effect eaves-light waves-yellow red btn">Eliminar</button></td>
+        </tr>
+        <tbody></tbody>
+      </table>
+      <h2>Precio total: {{sum}}</h2>
+    </div>
+    <h2 v-else>El Carro de Compras está Vacío</h2>
+  </div>
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--mi app en vue-->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
